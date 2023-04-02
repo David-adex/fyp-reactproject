@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 function App() {
   return (
@@ -22,4 +24,24 @@ function App() {
   );
 }
 
-export default App;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
+
+function Test(){
+  const classes = useStyles();
+  return(
+    <form className={classes.root} noValidate autoComplete="off">
+      <TextField id="standard-basic" label="Standard" />
+      <TextField id="filled-basic" label="Filled" variant="filled" />
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+    </form>
+  );
+}
+export default Test;
+// export default App;
