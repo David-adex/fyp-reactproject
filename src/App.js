@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Nav';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
-import PickThemePage from './PickThemePage';
+import Resume from './Resume';
 
 function App() {
   return (
@@ -13,23 +13,14 @@ function App() {
         <Nav />
       <Switch>
         <Route exact path="/">
-          <LoginPage />
+          <LoginPage/>
         </Route>
         <Route path="/signup">
           <SignUpPage />
-        </Route>
-        <Route path="/theme">
-          <PickThemePage />
-        </Route>
-        <Route path="/form">
-          {/* Add resume form component */}
-        </Route>
-        <Route path="/form2">
-          {/* Add component */}
-        </Route>
-        <Route path="/preview">
-          {/* Add resume preview and download component */}
-        </Route>
+        </Route> 
+        <Route path="/form" >
+          <Resume/>
+        </Route> 
       </Switch>
       </div>
     </Router>

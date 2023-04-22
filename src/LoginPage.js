@@ -39,7 +39,8 @@ const LoginPage = () => {
       })
       .then(res=>{
         if (res.data==="exists"){
-          history.push("/theme")
+          window.localStorage.setItem("LoggedIn", true)
+          history.push("/form")
         }
         else if(res.data==="notexist"){
           alert('Invalid email or password')
@@ -76,8 +77,8 @@ const LoginPage = () => {
             <Button className={classes.complete} onClick={handleSubmit} type="submit" variant="contained" color="primary">
                 LOGIN
             </Button>
-            <Link to="/signup" className={classes.complete}>Don't have an account? Sign up</Link>
-        </form>    
+            <Link to="/signup" className={classes.complete}>Don't have an account? Sign up</Link> 
+        </form>   
   );
 }
 
