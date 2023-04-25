@@ -132,7 +132,7 @@ app.post('/download', async (req, res) => {
 
     // Sends the PDF as a download to the client side
     res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', 'attachment; filename=resume.pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename=Resume.pdf');
     res.send(pdfBuffer);
   }
   catch (err) {
